@@ -1,12 +1,17 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Author @alex
+# Description @ tools.py
+# CreateTime @ 2019-12-14 21:41:19
+
 from urllib.request import quote
 
 import requests
 from bs4 import BeautifulSoup as soup
 
 
-def getAccurateName(sName):
-    """
-    fuzzy search supported
+def fuzzy_search(sName) -> (str):
+    """return an accurate name
     """
     sName = quote(sName.strip().encode('utf-8'))
     QidianUrl = 'https://www.qidian.com/search?kw='
